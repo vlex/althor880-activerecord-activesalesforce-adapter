@@ -713,7 +713,7 @@ module ActiveRecord
             reference_to = reference_to.chomp("__c").camelize if reference_to.match(/__c$/)
             
             begin
-              referenced_klass = class_from_entity_name(reference_to)
+              referenced_klass = class_from_entity_name(reference_to) unless reference_to =~ /c2g__/
             rescue NameError => e
                 # Automatically create a least a stub for the referenced entity
                 debug("   Creating ActiveRecord stub for the referenced entity '#{reference_to}'")
