@@ -54,7 +54,7 @@ module ActiveRecord
       url = "https://www.salesforce.com" unless url
 
       uri = URI.parse(url)
-      uri.path = "/services/Soap/u/11.0"
+      uri.path = "/services/Soap/u/21.0"
       url = uri.to_s      
       
       sid = config[:sid]
